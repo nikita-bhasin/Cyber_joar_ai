@@ -1,5 +1,6 @@
 import * as turf from '@turf/turf';
 import { FeatureType } from '../types';
+import type { Feature, Polygon } from 'geojson';
 
 /**
  * Checks if a feature type is a polygon type (subject to overlap rules)
@@ -12,7 +13,7 @@ export function isPolygonType(type: FeatureType): boolean {
  * Converts a GeoJSON geometry to a Turf Polygon for spatial operations
  * Handles Circle and Rectangle by converting them to polygons
  */
-export function geometryToPolygon(geometry: GeoJSON.Geometry): turf.Feature<turf.Polygon> | null {
+export function geometryToPolygon(geometry: GeoJSON.Geometry): Feature<Polygon> | null {
   if (geometry.type === 'Polygon') {
     return turf.polygon(geometry.coordinates);
   }
