@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.0059, 40.7128],
+            [-73.9859, 40.7128],
+            [-73.9859, 40.7328],
+            [-74.0059, 40.7328],
+            [-74.0059, 40.7128]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "feature_1234567890_abc123",
+        "type": "rectangle",
+        "color": "#10b981"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-74.0159, 40.7028],
+          [-73.9959, 40.7028],
+          [-73.9959, 40.7228]
+        ]
+      },
+      "properties": {
+        "id": "feature_1234567891_def456",
+        "type": "linestring",
+        "color": "#ef4444"
+      }
+    }
+  ]
+}
+
