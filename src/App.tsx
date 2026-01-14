@@ -2,7 +2,6 @@ import { Map } from './components/Map';
 import { DrawingToolbar } from './components/DrawingToolbar';
 import { ExportButton } from './components/ExportButton';
 import { useMapStore } from './store/mapStore';
-import { getFeatureColor } from './utils/polygonUtils';
 import './App.css';
 
 function App() {

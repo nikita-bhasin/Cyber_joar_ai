@@ -85,15 +85,15 @@ export function trimPolygonOverlap(
         // Subtract the intersection from the new polygon
         const difference = turf.difference(currentPoly, existingPoly);
         if (difference && difference.geometry.type === 'Polygon') {
-          currentPoly = difference as turf.Feature<turf.Polygon>;
+          currentPoly = difference as any;
         } else if (difference && difference.geometry.type === 'MultiPolygon') {
           // If result is MultiPolygon, take the largest polygon
-          const multiPoly = difference as turf.Feature<turf.MultiPolygon>;
-          const polygons = multiPoly.geometry.coordinates.map((coords) =>
+          const multiPoly = difference as any;
+          const polygons: any[] = multiPoly.geometry.coordinates.map((coords: any) =>
             turf.polygon(coords)
           );
           // Find the largest polygon by area
-          const largest = polygons.reduce((max, poly) => {
+          const largest = polygons.reduce((max: any, poly: any) => {
             const maxArea = turf.area(max);
             const polyArea = turf.area(poly);
             return polyArea > maxArea ? poly : max;

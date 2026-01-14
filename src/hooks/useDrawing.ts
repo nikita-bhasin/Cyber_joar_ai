@@ -23,11 +23,8 @@ export function useDrawing() {
   const map = useMap();
   const {
     drawingState,
-    features,
     addFeature,
-    setDrawingMode,
     setIsDrawing,
-    maxShapes,
   } = useMapStore();
   
   const drawingLayerRef = useRef<L.LayerGroup | null>(null);
@@ -195,7 +192,9 @@ export function useDrawing() {
     startPointRef.current = latlng;
     setIsDrawing(true);
 
-    const rectangle = L.rectangle([latlng, latlng], {
+    const bounds = L.latLngBounds(latlng, latlng);
+
+    const rectangle = L.rectangle(bounds, {
       color: getFeatureColor('rectangle'),
       fillColor: getFeatureColor('rectangle'),
       fillOpacity: 0.3,
